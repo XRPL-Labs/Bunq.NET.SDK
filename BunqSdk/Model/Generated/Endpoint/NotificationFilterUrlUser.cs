@@ -13,7 +13,7 @@ namespace Bunq.Sdk.Model.Generated.Endpoint
     /// <summary>
     /// Manage the url notification filters for a user.
     /// </summary>
-    public class NotificationFilterUrl : BunqModel
+    public class NotificationFilterUrlUser : BunqModel
     {
         /// <summary>
         /// Endpoint constants.

@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Text;
 using System;
+using Bunq.Sdk.Model.Generated.Object;
 
 namespace Bunq.Sdk.Model.Generated.Endpoint
 {
