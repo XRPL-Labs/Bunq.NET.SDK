@@ -6,7 +6,7 @@ namespace Bunq.Sdk.Model.Generated.Object
 {
     /// <summary>
     /// </summary>
-    public class NotificationFilterPush : BunqModel
+    public class NotificationFilterEmail : BunqModel
     {
         /// <summary>
         /// The notification category that will match this notification filter.
@@ -27,7 +27,7 @@ namespace Bunq.Sdk.Model.Generated.Object
         public List<string> AllMonetaryAccountId { get; set; }
     
     
-        public NotificationFilterPush(string category)
+        public NotificationFilterEmail(string category)
         {
             Category = category;
         }
@@ -57,9 +57,9 @@ namespace Bunq.Sdk.Model.Generated.Object
     
         /// <summary>
         /// </summary>
-        public static NotificationFilterPush CreateFromJsonString(string json)
+        public static NotificationFilterEmail CreateFromJsonString(string json)
         {
-            return BunqModel.CreateFromJsonString<NotificationFilterPush>(json);
+            return BunqModel.CreateFromJsonString<NotificationFilterEmail>(json);
         }
     }
 }

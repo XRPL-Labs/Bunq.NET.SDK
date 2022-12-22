@@ -123,11 +123,6 @@ namespace Bunq.Sdk.Model.Generated.Object
     
         /// <summary>
         /// </summary>
-        [JsonProperty(PropertyName = "ShareInviteBankInquiryBatch")]
-        public ShareInviteBankInquiryBatch ShareInviteBankInquiryBatch { get; set; }
-    
-        /// <summary>
-        /// </summary>
         [JsonProperty(PropertyName = "ShareInviteBankInquiry")]
         public ShareInviteMonetaryAccountInquiry ShareInviteBankInquiry { get; set; }
     
@@ -140,16 +135,6 @@ namespace Bunq.Sdk.Model.Generated.Object
         /// </summary>
         [JsonProperty(PropertyName = "SofortMerchantTransaction")]
         public SofortMerchantTransaction SofortMerchantTransaction { get; set; }
-    
-        /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "TabResultInquiry")]
-        public TabResultInquiry TabResultInquiry { get; set; }
-    
-        /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "TabResultResponse")]
-        public TabResultResponse TabResultResponse { get; set; }
     
         /// <summary>
         /// </summary>
@@ -267,11 +252,6 @@ namespace Bunq.Sdk.Model.Generated.Object
                 return this.RewardSender;
             }
     
-            if (this.ShareInviteBankInquiryBatch != null)
-            {
-                return this.ShareInviteBankInquiryBatch;
-            }
-    
             if (this.ShareInviteBankInquiry != null)
             {
                 return this.ShareInviteBankInquiry;
@@ -285,16 +265,6 @@ namespace Bunq.Sdk.Model.Generated.Object
             if (this.SofortMerchantTransaction != null)
             {
                 return this.SofortMerchantTransaction;
-            }
-    
-            if (this.TabResultInquiry != null)
-            {
-                return this.TabResultInquiry;
-            }
-    
-            if (this.TabResultResponse != null)
-            {
-                return this.TabResultResponse;
             }
     
             if (this.TransferwisePayment != null)
@@ -414,11 +384,6 @@ namespace Bunq.Sdk.Model.Generated.Object
                 return false;
             }
     
-            if (this.ShareInviteBankInquiryBatch != null)
-            {
-                return false;
-            }
-    
             if (this.ShareInviteBankInquiry != null)
             {
                 return false;
@@ -430,16 +395,6 @@ namespace Bunq.Sdk.Model.Generated.Object
             }
     
             if (this.SofortMerchantTransaction != null)
-            {
-                return false;
-            }
-    
-            if (this.TabResultInquiry != null)
-            {
-                return false;
-            }
-    
-            if (this.TabResultResponse != null)
             {
                 return false;
             }
