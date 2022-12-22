@@ -35,7 +35,20 @@ namespace Bunq.Sdk.Model.Generated.Endpoint
         /// </summary>
         private const string OBJECT_TYPE_GET = "ScheduledPayment";
         private const string OBJECT_TYPE_PUT = "ScheduledPayment";
-    
+
+        /// <summary>
+        /// The id of the created Scheduled Payment.
+        /// </summary>
+        [JsonProperty(PropertyName = "id")]
+        public int? Id { get; set; }
+
+        /// <summary>
+        /// The id of the MonetaryAccount the Scheduled Payment was made to or from (depending on whether this is an incoming or
+        /// outgoing Payment).
+        /// </summary>
+        [JsonProperty(PropertyName = "monetary_account_id")]
+        public int? MonetaryAccountId { get; set; }
+
         /// <summary>
         /// The payment details.
         /// </summary>
