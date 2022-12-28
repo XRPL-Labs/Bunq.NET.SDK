@@ -1,12 +1,10 @@
-using Bunq.Sdk.Context;
+using System.Collections.Generic;
+using System.Text;
 using Bunq.Sdk.Http;
 using Bunq.Sdk.Json;
 using Bunq.Sdk.Model.Core;
 using Bunq.Sdk.Model.Generated.Object;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Text;
-using System;
 
 namespace Bunq.Sdk.Model.Generated.Endpoint
 {
@@ -30,12 +28,16 @@ namespace Bunq.Sdk.Model.Generated.Endpoint
         public const string FIELD_CURRENCY_TARGET = "currency_target";
         public const string FIELD_COUNTERPARTY_ALIAS = "counterparty_alias";
         public const string FIELD_STATUS = "status";
-    
+
+        public const string FIELD_STATUS_PENDING = "PENDING";
+        public const string FIELD_STATUS_ACCEPTED = "ACCEPTED";
+        public const string FIELD_STATUS_EXPIRED = "EXPIRED";
+
         /// <summary>
         /// Object type.
         /// </summary>
-        private const string OBJECT_TYPE_GET = "CurrencyConversionQuote";
-        private const string OBJECT_TYPE_PUT = "";
+        private const string OBJECT_TYPE_GET = "CurrencyCloudConversionQuote";
+        private const string OBJECT_TYPE_PUT = "CurrencyCloudConversionQuote";
     
         /// <summary>
         /// The amount to convert.
@@ -117,7 +119,7 @@ namespace Bunq.Sdk.Model.Generated.Endpoint
         /// <param name="currencyTarget">The currency we are converting towards.</param>
         /// <param name="counterpartyAlias">The Alias of the party we are transferring the money to.</param>
         /// <param name="status">The status of the quote.</param>
-        public static BunqResponse<int> Create(Amount amount, string currencySource, string currencyTarget, Pointer counterpartyAlias, int? monetaryAccountId= null, string status = null, IDictionary<string, string> customHeaders = null)
+        public static BunqResponse<CurrencyConversionQuote> Create(Amount amount, string currencySource, string currencyTarget, Pointer counterpartyAlias, int? monetaryAccountId= null, string status = null, IDictionary<string, string> customHeaders = null)
         {
             if (customHeaders == null) customHeaders = new Dictionary<string, string>();
     
@@ -134,8 +136,7 @@ namespace Bunq.Sdk.Model.Generated.Endpoint
     
             var requestBytes = Encoding.UTF8.GetBytes(BunqJsonConvert.SerializeObject(requestMap));
             var responseRaw = apiClient.Post(string.Format(ENDPOINT_URL_CREATE, DetermineUserId(), DetermineMonetaryAccountId(monetaryAccountId)), requestBytes, customHeaders);
-    
-            return ProcessForId(responseRaw);
+            return FromJson<CurrencyConversionQuote>(responseRaw, OBJECT_TYPE_GET);
         }
     
         /// <summary>
